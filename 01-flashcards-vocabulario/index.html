@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarjetas de vocabulario</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>Tarjetas de vocabulario</h1>
+      <p class="subtitulo">Haz clic en la tarjeta (o pulsa la barra espaciadora) para ver la traducción.</p>
+    </header>
+
+    <!--
+      La tarjeta es un <button> y no un <div> por accesibilidad:
+      un botón se puede enfocar con Tab y activar con Enter o Espacio
+      sin escribir código extra. Los "id" sirven para encontrar
+      estos elementos desde JavaScript.
+    -->
+    <button id="tarjeta" class="tarjeta" type="button" aria-live="polite">
+      <div class="tarjeta-interior">
+        <div class="cara cara-frontal">
+          <span class="idioma">Inglés</span>
+          <p id="palabra" class="palabra"></p>
+        </div>
+        <div class="cara cara-trasera">
+          <span class="idioma">Español</span>
+          <p id="traduccion" class="palabra"></p>
+          <p id="ejemplo" class="ejemplo"></p>
+        </div>
+      </div>
+    </button>
+
+    <nav class="controles" aria-label="Navegación entre tarjetas">
+      <button id="btn-anterior" type="button">&larr; Anterior</button>
+      <span id="contador" class="contador"></span>
+      <button id="btn-siguiente" type="button">Siguiente &rarr;</button>
+    </nav>
+  </main>
+
+  <!--
+    El script va al final del <body> para que, cuando se ejecute,
+    todos los elementos de arriba ya existan en la página.
+  -->
+  <script src="app.js"></script>
+</body>
+</html>

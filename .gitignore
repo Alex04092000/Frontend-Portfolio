@@ -1,0 +1,18 @@
+# Dependencias y builds (a partir del proyecto 4)
+node_modules/
+dist/
+build/
+.vite/
+coverage/
+
+# Variables de entorno: nunca subir claves
+.env
+.env.*
+!.env.example
+
+# Sistema y editor
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+*.log
